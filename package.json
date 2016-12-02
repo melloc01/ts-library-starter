@@ -11,14 +11,14 @@
     "dist/main.js": "./dist/main.browser.js"
   },
   "scripts": {
-    "prebuild": "npm install",
+    "prebuild": "yarn install",
     "build": "webpack || echo not ok",
     "test": "jest",
-    "test:watch": "npm test -- --watch",
-    "coverage": "npm test -- --coverage --no-cache",
-    "coverage:watch": "npm run coverage -- --watch",
-    "prerelease": "npm run build && npm test",
-    "release": "standard-version && npm pack"
+    "test:watch": "yarn test -- --watch",
+    "coverage": "yarn test -- --coverage --no-cache",
+    "coverage:watch": "yarn run coverage -- --watch",
+    "prerelease": "yarn run build && yarn test",
+    "release": "standard-version && yarn pack"
   },
   "repository": {
     "type": "git",
@@ -66,7 +66,10 @@
     "webpack": "2.1.0-beta.22",
     "webpack-node-externals": "^1.4.3"
   },
-  "dependencies": {},
+  "dependencies": {
+    "fingerprintjs2": "^1.4.1",
+    "jquery": "^3.1.1"
+  },
   "jest": {
     "scriptPreprocessor": "node_modules/typescript-babel-jest",
     "testEnvironment": "node",
